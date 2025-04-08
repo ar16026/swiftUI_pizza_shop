@@ -25,9 +25,17 @@ struct OrderView: View {
             ScrollView {
                 ForEach(orders, id: \.self) {i in
                     OrderRowView(order: i)
+                    // inserts padding on all four sides unless specified
+                        .padding(.bottom, 5)
+                        .padding([
+                            .leading,
+                            .trailing,
+                        ], 7)
                 }
             }
         }
+        .padding()
+        .background(Color("Surf"))
     }
 }
 
